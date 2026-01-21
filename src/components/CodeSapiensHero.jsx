@@ -360,7 +360,7 @@ const SocialMediaSection = () => {
         {
             name: "WhatsApp",
             icon: null,
-            link: "https://whatsapp.com/channel/0029Va570WlC1FuFlYtqWq37",
+            link: "https://chat.whatsapp.com/LLtoddmQx5rIRNb8WE6rqC?mode=ems_copy_t",
             color: "bg-[#25D366]",
             textColor: "text-white",
             span: "col-span-1",
