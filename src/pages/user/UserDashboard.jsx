@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import {
   ArrowUpRight, Settings, Users, Star,
   Zap, LogOut, ChevronRight, PenTool, Calendar,
-  FileText, Handshake, MapPin, X, BookOpen, BrainCircuit
+  FileText, Handshake, MapPin, X, BookOpen, BrainCircuit, Code
 } from "lucide-react";
 import { supabase } from "../../lib/supabaseClient";
 import { useUser } from '@supabase/auth-helpers-react';
@@ -415,8 +415,29 @@ export default function UserDashboard() {
                   <Star className={`w-8 h-8 ${isHovered ? 'fill-[#2B2929]' : 'fill-transparent'} transition-colors`} />
                 </div>
                 <div className="mt-auto">
-                  <h3 className="text-3xl font-bold mb-2">Mentorship</h3>
+                  <h3 className="text-3xl font-black mb-2 tracking-tight">Mentorship</h3>
                   <p className="text-[#2B2929]/80 font-medium">Find or become a mentor</p>
+                </div>
+              </>
+            )}
+          </BentoCard>
+
+          {/* NEW: PROGRAMS - Orange */}
+          <BentoCard
+            className="bg-[#FF5018] text-white"
+            onClick={(e) => handleCardClick(e, '/programs', '#FF5018')}
+            delay={0.45}
+            hoverColor="#000000"
+          >
+            {(isHovered) => (
+              <>
+                <div className="flex justify-between items-start">
+                  <Code className="w-10 h-10 stroke-[2]" />
+                  <ArrowUpRight className={`w-8 h-8 ${isHovered ? 'translate-x-1 -translate-y-1' : ''} transition-transform`} />
+                </div>
+                <div className="mt-auto">
+                  <h3 className="text-3xl font-black mb-2 tracking-tight">Programs</h3>
+                  <p className="text-white/80 font-medium">Browse active programs</p>
                 </div>
               </>
             )}
