@@ -35,14 +35,11 @@ export default function AuthForm() {
     In development use localhost, in production use site url.
     We prefer window.location.origin as it works dynamically for all environments (dev, preview, prod).
   */
-  /* 
-    Dynamic Redirect URL helper
-    In development use localhost, in production use site url.
-    We prefer window.location.origin as it works dynamically for all environments (dev, preview, prod).
-  */
   const getURL = () => {
     let url =
-      import.meta.env?.VITE_SITE_URL ?? // Set this to your site URL in production env.
+      import.meta.env?.VITE_SITE_URL ??
+      import.meta.env?.NEXT_PUBLIC_SITE_URL ??
+      import.meta.env?.NEXT_PUBLIC_VERCEL_URL ??
       window.location.origin ??
       'http://localhost:3000/';
 
@@ -66,6 +63,8 @@ export default function AuthForm() {
     // dbURL() returns base with trailing slash, so we remove leading slash from path if present
     const cleanPath = redirectPath.startsWith('/') ? redirectPath.slice(1) : redirectPath;
     const fullRedirectUrl = `${getURL()}${cleanPath}`;
+
+    console.log('[Auth] Redirecting to:', fullRedirectUrl);
 
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
