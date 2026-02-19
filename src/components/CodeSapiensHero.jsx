@@ -218,10 +218,21 @@ const SponsorSection = () => {
             image: "https://res.cloudinary.com/dqudvximt/image/upload/v1767817529/users_cme79i2lk00qls401ar5qxqnc_DaxnHl7f0QdeQwgx-square-image_pvgube.jpg",
         },
         {
+            name: "Navan AI",
+            link: "https://navan.ai/",
+            image: "https://res.cloudinary.com/dqudvximt/image/upload/v1771507803/WhatsApp_Image_2026-02-19_at_4.28.11_PM_bxnzfc.jpg",
+        },
+        {
             name: "Notion",
             link: "https://www.notion.com/",
             image: "https://res.cloudinary.com/dqudvximt/image/upload/v1767817532/users_cme79i2lk00qls401ar5qxqnc_891aQQNEpsjHP7Ef-notion-logo-png_seeklogo-425508_k0njb3.webp",
         },
+        {
+            name: "Interview Buddy",
+            link: "https://interviewbuddy.net/",
+            image: "https://res.cloudinary.com/dqudvximt/image/upload/v1771508422/WhatsApp_Image_2026-02-19_at_4.28.12_PM_xxalgw.jpg",
+        },
+        
     ];
 
     return (
