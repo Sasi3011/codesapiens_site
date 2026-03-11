@@ -73,7 +73,7 @@ const Navbar = () => {
         </a>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-1">
           {links.map(link => (
             <button
               key={link.label}
@@ -109,7 +109,7 @@ const Navbar = () => {
               bg-gradient-to-r from-blue-600 to-cyan-500 shadow-[0_0_20px_rgba(37,99,235,0.4)]">
             Get Started
           </motion.button>
-          <button onClick={() => setMobileOpen(true)} className="md:hidden text-white/70 hover:text-white p-1 ml-1">
+          <button onClick={() => setMobileOpen(true)} className="lg:hidden text-white/70 hover:text-white p-1 ml-1">
             <Menu size={22} />
           </button>
         </div>
@@ -189,7 +189,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\'/%3E%3C/svg%3E")' }} />
 
-      <div className="relative z-10 container mx-auto px-6 lg:px-12 pt-28 pb-16">
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 pt-4 md:pt-6 lg:pt-32 pb-16">
         <motion.div variants={stagger} initial="hidden" animate="show" className="max-w-5xl">
 
           {/* Badge */}
@@ -280,7 +280,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, x: 120, y: 30 }}
           animate={{ opacity: 1, x: 0, y: 0 }}
           transition={{ delay: 0.6, duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute top-1/2 -translate-y-1/2 right-0 md:right-16 lg:right-32 hidden md:block"
+          className="absolute top-1/2 -translate-y-1/2 right-0 lg:right-16 xl:right-32 hidden lg:block"
         >
           {/* Outer glow ring */}
           <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-blue-500/20 via-cyan-400/10 to-purple-500/20 blur-2xl" />
@@ -679,7 +679,7 @@ const ImpactSection = () => {
   ];
 
   return (
-    <section className="relative bg-[#030303] py-28 overflow-hidden border-t border-white/5">
+    <section className="relative bg-[#030303] py-16 md:py-28 overflow-hidden border-t border-white/5">
       {/* Background Mesh Glows */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] bg-blue-600/10 blur-[150px] rounded-full opacity-50" />
@@ -687,10 +687,10 @@ const ImpactSection = () => {
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+        <div className="flex flex-col md:flex-row gap-12 lg:gap-24 items-center">
 
           {/* Left Side: Text & Compact Stats */}
-          <div className="lg:w-5/12 space-y-12">
+          <div className="md:w-5/12 w-full space-y-12">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -703,9 +703,9 @@ const ImpactSection = () => {
                 <span className="text-blue-400 text-[10px] font-black uppercase tracking-[0.3em]">Impact Report</span>
               </div>
 
-              <h2 className="text-[clamp(2.5rem,8vw,5rem)] text-white tracking-tightest leading-[1] mb-8" style={wide}>
+              <h2 className="text-[clamp(2.5rem,6vw,5rem)] text-white tracking-tightest leading-[0.9] mb-8" style={wide}>
                 BY THE <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/20">NUMBERS</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-white/10 uppercase">NUMBERS</span>
               </h2>
               <p className="text-white/40 text-base md:text-lg font-medium max-w-sm border-l-2 border-blue-500/30 pl-5 py-1">
                 We are growing fast. <br />
@@ -739,7 +739,7 @@ const ImpactSection = () => {
           </div>
 
           {/* Right Side: Perspective Slabs Leaderboard */}
-          <div className="lg:w-3/5 w-full perspective-2000">
+          <div className="md:w-3/5 w-full perspective-2000">
             <div className="flex items-center justify-between mb-10 px-4">
               <h3 className="text-white text-xl font-black flex items-center gap-3 tracking-[0.1em]" style={wide}>
                 Top Active Colleges <Trophy size={20} className="text-yellow-500" />
@@ -771,7 +771,7 @@ const ImpactSection = () => {
                       rotateY: { type: "spring", stiffness: 400, damping: 25 }
                     }}
                     className={`
-                      relative p-6 rounded-[2.5rem] border ${config.border} backdrop-blur-md
+                      relative p-4 sm:p-6 rounded-[2.5rem] border ${config.border} backdrop-blur-md
                       flex items-center justify-between overflow-hidden shadow-2xl group
                       bg-gradient-to-r ${config.bg} to-transparent
                     `}
@@ -779,7 +779,7 @@ const ImpactSection = () => {
                     {/* Glass highlight */}
                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50 pointer-events-none" />
 
-                    <div className="flex items-center gap-6 relative z-10">
+                    <div className="flex items-center gap-4 sm:gap-6 relative z-10">
                       <div className={`
                         w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 border
                         ${config.iconBg} ${config.iconBorder}
